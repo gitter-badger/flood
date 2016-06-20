@@ -1,3 +1,4 @@
+import {formatMessage, FormattedMessage, injectIntl} from 'react-intl';
 import classnames from 'classnames';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 import React from 'react';
@@ -9,50 +10,7 @@ const METHODS_TO_BIND = [
   'handleItemSelect'
 ];
 
-const SORT_PROPERTIES = [
-  {
-    displayName: 'Name',
-    value: 'name'
-  },
-  {
-    displayName: 'ETA',
-    value: 'eta'
-  },
-  {
-    displayName: 'Download Speed',
-    value: 'downloadRate'
-  },
-  {
-    displayName: 'Upload Speed',
-    value: 'uploadRate'
-  },
-  {
-    displayName: 'Ratio',
-    value: 'ratio'
-  },
-  {
-    displayName: 'Percent Complete',
-    value: 'percentComplete'
-  },
-  {
-    displayName: 'Downloaded',
-    value: 'downloadTotal'
-  },
-  {
-    displayName: 'Uploaded',
-    value: 'uploadTotal'
-  },
-  {
-    displayName: 'File Size',
-    value: 'sizeBytes'
-  },
-  {
-    displayName: 'Date Added',
-    value: 'added'
-  }
-];
-
-export default class SortDropdown extends React.Component {
+class SortDropdown extends React.Component {
   constructor() {
     super();
 
@@ -64,14 +22,92 @@ export default class SortDropdown extends React.Component {
   getDropdownHeader() {
     return (
       <a className="dropdown__button">
-        <label className="dropdown__label">Sort By</label>
+        <label className="dropdown__label">
+          <FormattedMessage
+            id="sort.torrents.title"
+            defaultMessage="Sort By"
+          />
+        </label>
         <span className="dropdown__value">{this.props.selectedItem.displayName}</span>
       </a>
     );
   }
 
   getDropdownMenus() {
-    let items = SORT_PROPERTIES.map((sortProp) => {
+    let options = [
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.name',
+          defaultMessage: 'Name'
+        }),
+        value: 'name'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.eta',
+          defaultMessage: 'ETA'
+        }),
+        value: 'eta'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.download.speed',
+          defaultMessage: 'Download Speed'
+        }),
+        value: 'downloadRate'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.upload.speed',
+          defaultMessage: 'Upload Speed'
+        }),
+        value: 'uploadRate'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.ratio',
+          defaultMessage: 'Ratio'
+        }),
+        value: 'ratio'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.percentage',
+          defaultMessage: 'Percent Complete'
+        }),
+        value: 'percentComplete'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.download.total',
+          defaultMessage: 'Downloaded'
+        }),
+        value: 'downloadTotal'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.upload.total',
+          defaultMessage: 'Uploaded'
+        }),
+        value: 'uploadTotal'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.size',
+          defaultMessage: 'File Size'
+        }),
+        value: 'sizeBytes'
+      },
+      {
+        displayName: this.props.intl.formatMessage({
+          id: 'sort.torrents.added',
+          defaultMessage: 'Date Added'
+        }),
+        value: 'added'
+      }
+    ];
+
+    let items = options.map((sortProp) => {
       return {
         displayName: sortProp.displayName,
         property: 'sortBy',
@@ -116,3 +152,5 @@ export default class SortDropdown extends React.Component {
     );
   }
 }
+
+export default injectIntl(SortDropdown);

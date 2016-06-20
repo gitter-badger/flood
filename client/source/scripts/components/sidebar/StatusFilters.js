@@ -1,6 +1,6 @@
+import {formatMessage, FormattedMessage, injectIntl} from 'react-intl';
 import classnames from 'classnames';
 import React from 'react';
-import { injectIntl, formatMessage, FormattedMessage } from 'react-intl';
 
 import Active from '../../components/icons/Active';
 import All from '../../components/icons/All';
@@ -79,7 +79,7 @@ class StatusFilters extends React.Component {
     let filters = [
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.all',
+          id: 'filter.status.all',
           defaultMessage: 'All'
         }),
         slug: 'all',
@@ -87,7 +87,7 @@ class StatusFilters extends React.Component {
       },
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.downloading',
+          id: 'filter.status.downloading',
           defaultMessage: 'Downloading'
         }),
         slug: 'downloading',
@@ -95,7 +95,7 @@ class StatusFilters extends React.Component {
       },
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.completed',
+          id: 'filter.status.completed',
           defaultMessage: 'Completed'
         }),
         slug: 'completed',
@@ -103,7 +103,7 @@ class StatusFilters extends React.Component {
       },
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.active',
+          id: 'filter.status.active',
           defaultMessage: 'All'
         }),
         slug: 'active',
@@ -111,7 +111,7 @@ class StatusFilters extends React.Component {
       },
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.inactive',
+          id: 'filter.status.inactive',
           defaultMessage: 'Inactive'
         }),
         slug: 'inactive',
@@ -119,7 +119,7 @@ class StatusFilters extends React.Component {
       },
       {
         label: this.props.intl.formatMessage({
-          id: 'statusfilter.error',
+          id: 'filter.status.error',
           defaultMessage: 'Error'
         }),
         slug: 'error',
@@ -178,7 +178,7 @@ class StatusFilters extends React.Component {
       <ul className="sidebar-filter sidebar__item">
         <li className="sidebar-filter__item sidebar-filter__item--heading">
           <FormattedMessage
-            id="statusfilter.title"
+            id="filter.status.title"
             defaultMessage="Filter by Status"
           />
         </li>

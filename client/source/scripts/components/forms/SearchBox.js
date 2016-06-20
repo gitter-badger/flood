@@ -1,6 +1,6 @@
+import {formatMessage, injectIntl} from 'react-intl';
 import classnames from 'classnames';
 import React from'react';
-import { injectIntl, formatMessage } from 'react-intl';
 
 import Close from '../icons/Close';
 import Search from '../icons/Search';
