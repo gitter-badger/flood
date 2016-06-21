@@ -53,14 +53,14 @@ class SettingsModal extends React.Component {
   getActions() {
     let icon = null;
     let primaryButtonText = this.props.intl.formatMessage({
-      id: 'settings.button.save',
+      id: 'button.save',
       defaultMessage: 'Save Settings'
     });
 
     if (this.state.isSavingSettings) {
       icon = <LoadingIndicatorDots viewBox="0 0 32 32" />;
       primaryButtonText = this.props.intl.formatMessage({
-        id: 'settings.button.state.saving',
+        id: 'button.state.saving',
         defaultMessage: 'Saving...'
       });
     }
@@ -69,7 +69,7 @@ class SettingsModal extends React.Component {
       {
         clickHandler: null,
         content: this.props.intl.formatMessage({
-          id: 'settings.button.cancel',
+          id: 'button.cancel',
           defaultMessage: 'Cancel'
         }),
         triggerDismiss: true,
