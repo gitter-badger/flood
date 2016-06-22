@@ -24,7 +24,7 @@ class SortDropdown extends React.Component {
       <a className="dropdown__button">
         <label className="dropdown__label">
           <FormattedMessage
-            id="sort.torrents.title"
+            id="torrents.sort.title"
             defaultMessage="Sort By"
           />
         </label>
@@ -37,70 +37,70 @@ class SortDropdown extends React.Component {
     let options = [
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.name',
+          id: 'torrents.sort.name',
           defaultMessage: 'Name'
         }),
         value: 'name'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.eta',
+          id: 'torrents.sort.eta',
           defaultMessage: 'ETA'
         }),
         value: 'eta'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.download.speed',
+          id: 'torrents.sort.download.speed',
           defaultMessage: 'Download Speed'
         }),
         value: 'downloadRate'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.upload.speed',
+          id: 'torrents.sort.upload.speed',
           defaultMessage: 'Upload Speed'
         }),
         value: 'uploadRate'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.ratio',
+          id: 'torrents.sort.ratio',
           defaultMessage: 'Ratio'
         }),
         value: 'ratio'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.percentage',
+          id: 'torrents.sort.percentage',
           defaultMessage: 'Percent Complete'
         }),
         value: 'percentComplete'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.download.total',
+          id: 'torrents.sort.download.total',
           defaultMessage: 'Downloaded'
         }),
         value: 'downloadTotal'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.upload.total',
+          id: 'torrents.sort.upload.total',
           defaultMessage: 'Uploaded'
         }),
         value: 'uploadTotal'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.size',
+          id: 'torrents.sort.size',
           defaultMessage: 'File Size'
         }),
         value: 'sizeBytes'
       },
       {
         displayName: this.props.intl.formatMessage({
-          id: 'sort.torrents.added',
+          id: 'torrents.sort.added',
           defaultMessage: 'Date Added'
         }),
         value: 'added'
